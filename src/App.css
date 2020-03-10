@@ -1,16 +1,60 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.list {
+}
+
+.info {
+}
+
+
+a {
+  color: inherit;
+}
+
+input {
+  margin: 20px;
+  background: grey;
+  height: 1.25rem;
+  padding: .25rem;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  color: #fff;
 }
 
 ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 li {
-  padding: 5px 100px 5px 100px;
+  padding: 5px 0 5px 0;
+  list-style: none;
+  margin: auto;
+  max-width: 300px;
   display: flex;
   justify-content: space-between;
-  text-align: left;
+}
+
+button {
+  color: inherit;
+  outline: none;
+  border: none;
+  background: inherit;
 }
 
 span {
@@ -20,14 +64,24 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
   border-radius: 20px;
-  background: red;
+  background: #61dafb;
+  transition: .4s;
 }
 
 span:hover {
-  background: yellow;
+  opacity: .5;
   cursor: pointer;
+}
+
+
+.frozen {
+  background: grey;
+}
+
+.frozen:hover {
+  background: grey;
+  cursor: not-allowed;
 }
 
 .App-logo {

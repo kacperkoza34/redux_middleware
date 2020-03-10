@@ -4,8 +4,9 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import booksReducer from './reducers/booksReducer';
 
 /// applyMiddleware
-import getBooks from './middleware/getBooks';
+import getBooks from './middleware/books';
 import apiRequest from './middleware/apiRequest';
+import log from './middleware/log';
 
 const initialState ={
   books: {
@@ -28,6 +29,7 @@ const store = createStore(
   composeWithDevTools(
     applyMiddleware(
       thunk,
+      log,
       getBooks,
       apiRequest
     ),
