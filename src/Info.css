@@ -1,0 +1,16 @@
+.infoWrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.photoWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.photo {
+  height: 100%;
+  width: 100%;
+}

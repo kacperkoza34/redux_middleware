@@ -5,11 +5,15 @@ import App from './AppContainer';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import store from './redux/store.js';
+import HttpsRedirect from 'react-https-redirect';
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
+  <HttpsRedirect>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </HttpsRedirect>
+
   , document.getElementById('root')
 );
 

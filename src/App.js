@@ -4,7 +4,6 @@ import Loader from 'react-loader-spinner'
 import NewBookForm from './NewBookFormContainer';
 import Info from './Info'
 
-
 class App extends React.Component {
 
  displayList(){
