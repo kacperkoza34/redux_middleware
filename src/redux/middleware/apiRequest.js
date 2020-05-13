@@ -1,24 +1,26 @@
-import { API_REQUEST } from '../actions/apiRequest';
-import Axios from 'axios';
+import { API_REQUEST } from "../actions/apiRequest";
+import Axios from "axios";
 
-const apiRequest = ({dispatch, getState}) => next => action => {
+const PORT =
+  process.env.NODE_ENV === "production" ? "" : "http://localhost:5000";
+
+const apiRequest = ({ dispatch, getState }) => (next) => (action) => {
   next(action);
-  //const { url, method } = action.meta;
-  if( action.type === API_REQUEST) {
+
+  if (action.type === API_REQUEST) {
     const { method, url, onSucces, onError, body } = action.meta;
     Axios({
       method: method,
       url: url,
       data: body,
+      baseURL: PORT,
     })
-      .then( ({data}) =>{
-        dispatch(onSucces(method === 'DELETE'? body : data));
-      }
-      )
-      .catch( ({message}) =>{
+      .then(({ data }) => {
+        dispatch(onSucces(method === "DELETE" ? body : data));
+      })
+      .catch(({ message }) => {
         dispatch(onError(message));
-      }
-      );
+      });
   }
 };
 
