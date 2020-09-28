@@ -1,6 +1,6 @@
 # Heroku App
 
-https://redux-middleware.herokuapp.com/
+https://redux-middleware1252346.herokuapp.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
